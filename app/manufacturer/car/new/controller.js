@@ -3,11 +3,13 @@ import config from 'razer-cars/config/environment';
 
 export default Ember.Controller.extend({
   formValues: {
-    name: '',
-    country: ''
+    model_name: '',
+    year: '',
+    horsepower: '',
+    price: ''
   },
 
-  actions: {
+  action: {
     save() {
       fetch(config.apiUrl, {
         method: 'POST',
@@ -15,7 +17,7 @@ export default Ember.Controller.extend({
         body: JSON.stringify(this.formValues),
       }).then(r => r.json())
         .then(data => {
-          this.transitionToRoute('manufacturers');
+          this.transitionToRoute('manufacturer.index');
           this.set('formValues', {});
         });
     },
