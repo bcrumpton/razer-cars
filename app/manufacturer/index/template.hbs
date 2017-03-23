@@ -14,12 +14,12 @@
           </tr>
         </thead>
         <tbody>
-          {{#each model as |project|}}
+          {{#each model as |brand|}}
             <tr>
-              <td>{{project.name}}</td>
-              <td>{{project.country}}</td>
+              <td>{{brand.name}}</td>
+              <td>{{brand.country}}</td>
               <td>0</td>
-              <td>{{#link-to 'manufacturer.index' }}See More{{/link-to}}</td>
+              <td>{{#link-to "manufacturer.car" brand.id}}See More{{/link-to}}</td>
             </tr>
           {{/each}}
         </tbody>
