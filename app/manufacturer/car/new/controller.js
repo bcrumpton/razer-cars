@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
     price: ''
   },
 
-  action: {
+  actions: {
     save() {
       fetch(`${config.apiUrl}/cars`, {
         method: 'POST',
@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
         body: JSON.stringify({...this.formValues, brand_id: this.model.id}),
       }).then(r => r.json())
         .then(data => {
-          this.transitionToRoute('manufacturer.index');
+          this.transitionToRoute('manufacturer.car.index');
           this.set('formValues', {});
         });
     },

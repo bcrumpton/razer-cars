@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="panel panel-default">
-    <div class="panel-heading"><h4>{{model.name}}</h4></div>
+    <div class="panel-heading"><h1>{{model.name}}</h1></div>
     <div class="panel-body">
       {{#link-to 'manufacturer.car.new' class="btn btn-warning pull-right"}}Add New Car{{/link-to}}
     </div>
@@ -10,13 +10,16 @@
     {{#each model.cars as |cars|}}
       <div class="col-sm-4">
         <div class="panel panel-default">
-          <div class="panel-heading"><h4>2017 - Mazda 3</h4></div>
+          <div class="panel-heading"><h4>{{cars.name}}</h4></div>
           <div class="panel-body">
             <p>
-              {{cars.name}}
+              Year: {{cars.year}}
             </p>
             <p>
-              Price: $17485
+              Horsepower: {{cars.hp}}
+            </p>
+            <p>
+              Price: ${{cars.price}}
             </p>
           </div>
         </div>
