@@ -1,30 +1,32 @@
 
 <div class="container">
   <div class="panel panel-default">
-    <div class="panel-heading"><h1>{{brand.name}}</h1></div>
+    <div class="panel-heading"><h1>{{model.name}}</h1></div>
     <div class="panel-body">
       {{#link-to 'manufacturer.car.new' class="btn btn-warning pull-right"}}Add New Car{{/link-to}}
     </div>
   </div>
   <div class="row">
-    {{#each model.cars as |cars|}}
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading"><h4>{{cars.name}}</h4></div>
-          <div class="panel-body">
-            <p>
-              Year: {{cars.year}}
-            </p>
-            <p>
-              Horsepower: {{cars.hp}}
-            </p>
-            <p>
-              Price: ${{cars.price}}
-            </p>
+    {{#link-to 'manufacturer.car.edit' car.id}}
+      {{#each model.cars as |cars|}}
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>{{cars.name}}</h4></div>
+            <div class="panel-body">
+              <p>
+                Year: {{cars.year}}
+              </p>
+              <p>
+                Horsepower: {{cars.hp}}
+              </p>
+              <p>
+                Price: ${{cars.price}}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    {{/each}}
+      {{/each}}
+    {{/link-to}}
   </div>
 </div>
 

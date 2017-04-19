@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="panel panel-default">
+    <form {{action "updateCar" on="submit"}}>
+      <div class="panel-heading">
+        <h4>Edit {{formValues.name}}</h4>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          {{input type="name" value=formValues.name class="form-control" placeholder="Model Name"}}
+        </div>
+        <div class="form-group">
+          {{input type="" value=formValues.year class="form-control" placeholder="Year"}}
+        </div>
+        <div class="form-group">
+          {{input type="" value=formValues.hp class="form-control" placeholder="Horsepower"}}
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            {{input type="" value=formValues.price class="form-control" placeholder="Price"}}
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        {{#link-to 'manufacturer.car.index' class="btn btn-info"}}Back{{/link-to}}
+        <button {{action "deleteCar"}} class="btn btn-danger pull-right">Delete</button>
+        <button type="submit" class="btn btn-warning pull-right">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

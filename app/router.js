@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('new');
     this.route('car', { path: ':id' }, function() {
       this.route('new');
+      this.route('edit', { path: '/:id' });
     });
   });
 });
