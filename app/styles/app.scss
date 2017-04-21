@@ -1,0 +1,21 @@
+$primary: rgb(26, 114, 216);
+$primary-lite: rgb(129, 185, 236);
+$secondary: rgb(240, 173, 75);
+$secondary-lite: rgb(244, 217, 178);
+$pure-white: rgb(255, 255, 255);
+$white: rgb(239, 239, 239);
+$black: rgb(0, 0, 0);
+
+$navbar-default-bg: $primary;
+$navbar-default-brand-color: $pure-white;
+$navbar-default-link-color: $primary-lite;
+$navbar-default-link-hover-color: $pure-white;
+$navbar-default-link-active-color: $primary-lite;
+
+@import "ember-bootstrap/bootstrap";
+
+.table-head {
+  background: $black;
+  color: $white;
+  font-weight: 600;
+}

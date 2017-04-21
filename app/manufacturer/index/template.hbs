@@ -1,0 +1,29 @@
+{{outlet}}
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h4>Manufacturers</h4></div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead class="table-head">
+          <tr>
+            <td>Manufacturer</td>
+            <td>Country</td>
+            <td># of Models</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each model as |brand|}}
+            <tr>
+              <td>{{brand.name}}</td>
+              <td>{{brand.country}}</td>
+              <td>{{brand.cars.length}}</td>
+              <td>{{#link-to "manufacturer.car" brand.id}}See More{{/link-to}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
