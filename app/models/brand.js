@@ -3,5 +3,5 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   name: DS.attr(),
   country: DS.attr(),
-  car: DS.hasMany('car')
+  cars: DS.hasMany('car')
 });

@@ -4,30 +4,29 @@
     <div class="panel-heading"><h1>{{model.name}}</h1></div>
     <div class="panel-body">
       {{#link-to 'manufacturer.car.new' class="btn btn-warning pull-right"}}Add New Car{{/link-to}}
+      <button {{action "deleteBrand" model}} type="submit" class="btn btn-danger pull-right ml-1">Delete Brand</button>
+      {{#link-to 'manufacturer.edit' model.id class="btn btn-warning pull-right"}}Edit Manufacturer{{/link-to}}
     </div>
   </div>
   <div class="row">
-    {{#link-to 'manufacturer.car.edit' car.id}}
-      {{#each model.cars as |cars|}}
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading"><h4>{{cars.name}}</h4></div>
-            <div class="panel-body">
-              <p>
-                Year: {{cars.year}}
-              </p>
-              <p>
-                Horsepower: {{cars.hp}}
-              </p>
-              <p>
-                Price: ${{cars.price}}
-              </p>
-            </div>
+    {{#each model.cars as |cars|}}
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h4>{{cars.name}}</h4></div>
+          <div class="panel-body">
+            <p>
+              Year: {{cars.year}}
+            </p>
+            <p>
+              Horsepower: {{cars.hp}}
+            </p>
+            <p>
+              Price: ${{cars.price}}
+            </p>
+            <button {{action "deleteCar" cars}} type="submit" class="btn btn-danger">Delete Car</button>
           </div>
         </div>
-      {{/each}}
-    {{/link-to}}
+      </div>
+    {{/each}}
   </div>
 </div>
-
-{{outlet}}

@@ -6,6 +6,9 @@ export default Ember.Controller.extend({
   actions: {
     saveCar() {
       const car = this.store.createRecord('car', this.formValues);
+
+      car.set('brand', this.model);
+
       car.save().then(() => {
         this.set('formValues', {});
 
